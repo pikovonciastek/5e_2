@@ -9,3 +9,4 @@ join categories on Products.CategoryID = Categories.CategoryID
 where price between 10 and 50;
 
 
+select SupplierID, SupplierName from suppliers;
