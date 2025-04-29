@@ -11,9 +11,10 @@ if ($min_price && $max_price) {
 $result = $link -> query($sql);
 $products = $result -> fetch_all(mode: 1);
 
-// $sql = 'select SupplierName from suppliers';
-// $result = $link -> query($sql);
-// $suppliers = $result -> fetch_all(mode: 1);
+$sql = 'select SupplierID, SupplierName from suppliers;';
+$result = $link -> query($sql);
+$suppliers = $result -> fetch_all(mode: 1);
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -62,6 +63,18 @@ $products = $result -> fetch_all(mode: 1);
     }
     ?>
 </table>
+
+<form action="" method="post">
+    <label for="suppID">Wybierz dostawcę</label>
+    <select name="suppID" id="suppID">
+        <?php
+            foreach($suppliers as $supplier){
+            echo "{$supplier['SupplierName']}";
+            }
+        ?>
+    </select>
+</form>
+
 </body>
 </html>
 <?php
