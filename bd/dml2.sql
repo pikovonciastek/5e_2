@@ -76,14 +76,16 @@ where ShipperID = 7;
  where categoryID = 1;
 
 -- 18. Dodaj nową kategorię produktów
- 
+Insert into categories(CategoryName)
+values('Fats and oils');
 
 -- 19. Z tabeli Pracownicy (Employees) usuń pracownika o numerze 3 (EmployeeID). 
 delete from Employees
 where EmployeeID = 3;
 
 -- 20. Dodaj jeszcze jednego dostawcę (tabela Shippers)
-
+insert into Shippers(ShipperName)
+values('DHL');
 
 -- 21. Podnieś cenę Tofu do 30 (ProductName -nazwa produktu, Price - cena, tabela Products)
 update products
@@ -100,3 +102,6 @@ delete from OrderDetails
 where OrderID = 10443 and Order = 10440;
 
 -- 24. Zmień adres (Address), miasto (City) i kraj (Country) dostawcy o numerze 2  (SupplierID) na ul. Pocztową, Nakło, Polskę. (tabela Suppliers)
+update suppliers
+set Address = 'Pocztowa', City = 'Naklo', Country = 'Poland'
+where SupplierID = 2;
