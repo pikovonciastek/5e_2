@@ -8,13 +8,16 @@ if ($min_price && $max_price) {
 } else {
     $sql = "select ProductName, Categoryname, Price from products join categories on Products.CategoryID = Categories.CategoryID";
 }
-$result = $link -> query($sql);
+$result = $link -> query(query: $sql);
 $products = $result -> fetch_all(mode: 1);
 
-$sql = 'select SupplierID, SupplierName from suppliers;';
-$result = $link -> query($sql);
+$sql = 'select SupplierID, SupplierName from suppliers';
+$result = $link -> query(query: $sql);
 $suppliers = $result -> fetch_all(mode: 1);
 
+$sql = 'SELECT OrderID, OrderDate, ShipperID FROM orders';
+$result = $link->query(query: $sql);
+$orders = $result->fetch_all(mode: 1);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -63,13 +66,13 @@ $suppliers = $result -> fetch_all(mode: 1);
     }
     ?>
 </table>
-
+<br>
 <form action="" method="post">
     <label for="suppID">Wybierz dostawcę</label>
     <select name="suppID" id="suppID">
         <?php
             foreach($suppliers as $supplier){
-            echo "{$supplier['SupplierName']}";
+                echo "<option value='{$supplier['SupplierID']}'>{$supplier['SupplierName']}</option>";
             }
         ?>
     </select>
