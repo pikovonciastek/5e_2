@@ -21,29 +21,50 @@ VALUES
 
 -- 2. 
 -- A. Jeśli w tabeli Handlowcy brak jest pola sektor- dodaj je (typ int)
-
-
+alter table handlowcy add sektor int;
 
 -- B. Zaktualizuj (update) wartości kolumny sektor: dla loginów ibn, ktc ustaw sektor 1, dla milo oraz pik ustaw wartość pola sektor na 2, dla wojt na 3, a dla agam na 4
+update handlowcy
+set sektor = 1
+where login = 'ktc' or login = 'ibn';
 
 
+update handlowcy
+set sektor = 2
+where login = 'pik';
+
+update handlowcy
+set sektor = 3
+where login = 'wojt';
+
+update handlowcy
+set sektor = 4
+where login = 'agam';
 
 -- 3. Wyświetl całą zawartość tabeli handlowcy, a następnie zmodyfikuj wpisy:
 -- A. poprawiając adres mailowy użytkownika milo na milo@komis.eu oraz 
-
+update handlowcy
+set email = 'milo@komis.eu'
+where login = 'milo';
 
 
 -- B. usuń użytkownika z adresem mailowym pik@komis.eu
- 
+ delete from handlowcy
+ where email = 'pik@komis.eu';
 
 -- 4. Zmodyfikuj tabelę Rezerwacje 
 -- A. Dodaj pole status (tekst do 20 znaków)
-
-
-
+alter table rezerwacje 
+add status varchar(20);
 
 -- B. Zaktualizuj rekordy rezerwacji. Dla id = 1 nadaj status 'Oczekuje', dla id=2 nadaj status 'Anulowana'
- 
+ update rezerwacje
+ set status = 'Oczekuje'
+ where id = 1;
+
+ update rezerwacje
+ set status = 'Anulowana'
+ where id = 2;
 
 
 -- 5.
