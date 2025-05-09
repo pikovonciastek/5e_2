@@ -1,0 +1,2 @@
+select nazwa from dania;
+
