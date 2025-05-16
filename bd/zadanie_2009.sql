@@ -2,7 +2,7 @@
 select count(distinct nazwisko) as liczba_osob from osoby;
 
 -- b) Utwórz listę zawierającą identyfikatory mieszkań, w których średnio na osobę przypada mniej niż 6 m2.
-
+select 
 
 
 -- c) Podaj nazwiska i imiona właścicieli mieszkań o powierzchni powyżej 90 m2 i zajmowanych tylko przez jedną osobę.
