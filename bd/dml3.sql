@@ -32,19 +32,36 @@ create table archiwum_kontrahentów (
     kraj VARCHAR(100) DEFAULT 'Włochy'
 );
 
--- 7. Usuń klientów i dostawców z Włoch z tabel Customers i Suppliers (dwoma zapytaniami)
-drop from customers
-where Country ='Italy';
+-- 7. Usuń klientów i dostawców z Włoch z tabel Customers i Suppliers
+update orders
+set customerid = null
+where customerid in (select customerid from customers where country = 'Italy');
+delete from customers
+where country = 'Italy';
 
-drop from suppliers
-where Country ='Italy';
+delete from products
+where supplierid in (select supplierid from suppliers where country = 'Italy');
+delete from suppliers
+where country = 'Italy';
+
+update order_details
+set productID = null
+where productID in (select productID from products inner join suppliers on products.supplierid = suppliers.supplierid where suppliers.country = 'Italy');
+
+delete from products
+where supplierid in (select supplierid from suppliers where country = 'Italy');
+
+delete from suppliers
+where country = 'Italy';
 
 -- 8. Do tabeli Archiwum_Kontrahentów dodaj kontrahentów z Niemiec i Francji
-insert into archiwum_kontrahentów
-select * from suppliers
-where country ='Germany' or country ='France';
+insert into archiwum_kontrahentow
+select SupplierName, ContactName, City, country from suppliers
+where country in ('Germany', 'France');
+union
+select CustomerName, ContactName, City, country from customers
+where country in ('Germany', 'France');
  
-
 -- 9. Z tabeli Customers wybierz dane klientów z Niemiec i dodaj ich do tabeli Suppliers
 insert into suppliers
 select * from customers
