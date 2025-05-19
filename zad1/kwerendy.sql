@@ -1,2 +1,0 @@
-select nazwa from dania;
-
