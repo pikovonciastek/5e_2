@@ -1,0 +1,1 @@
+select productname, round(price, 2) as 'price' from products;
