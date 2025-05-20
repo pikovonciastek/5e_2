@@ -1,4 +1,5 @@
 <?php
+//zadanie 1
 $link = new mysqli('localhost', 'root', '', 'w3schools');
 $sql= "select distinct country from customers order by country";
 $result = $link -> query($sql);
@@ -16,6 +17,7 @@ $sql= "select customername from customers";
 $result = $link -> query($sql);
 $customers = $result -> fetch_all(mode: 1);
 
+//zadanie 2
 $listed = $_POST['prd'] ?? null;
 if ($listed){
     $sql= "select productname, round(price,2) from products where productname like '%$listed%'";
@@ -26,18 +28,15 @@ $result = $link -> query($sql);
 $products = $result -> fetch_all(mode: 1);
 
 
-
+// ZADANIE 3
 $sql = "SELECT MIN(price) AS min_price, ROUND(AVG(price), 2) AS avg_price, MAX(price) AS max_price FROM products";
 $result = $link->query($sql);
 $stats = $result->fetch_assoc();
-
 $min = $stats['min_price'];
 $avg = $stats['avg_price'];
 $max = $stats['max_price'];
-
 $from = $_POST['price_from'] ?? null;
 $to = $_POST['price_to'] ?? null;
-
 if ($from !== null && $to !== null && is_numeric($from) && is_numeric($to)) {
     $sql = "SELECT productname, ROUND(price, 2) AS price FROM products WHERE price BETWEEN $from AND $to";
     $result = $link->query($sql);
