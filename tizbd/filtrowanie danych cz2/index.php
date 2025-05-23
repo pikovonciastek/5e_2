@@ -40,7 +40,7 @@ $to = $_POST['price_to'] ?? null;
 if ($from !== null && $to !== null && is_numeric($from) && is_numeric($to)) {
     $sql = "SELECT productname, ROUND(price, 2) AS price FROM products WHERE price BETWEEN $from AND $to";
     $result = $link->query($sql);
-    $filtered_products = $result->fetch_all(MYSQLI_ASSOC);
+    $filtered_products = $result->fetch_all(MYSQLI_ASSOC: 1);
 } else {
     $filtered_products = [];
 }
@@ -52,7 +52,13 @@ if ($from !== null && $to !== null && is_numeric($from) && is_numeric($to)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Filtrowanie danych cz.2</title>
+    <style>
+        h2 {
+            font: 20px;
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h2>Zadanie 1</h2>
@@ -96,15 +102,26 @@ if ($from !== null && $to !== null && is_numeric($from) && is_numeric($to)) {
         <option value="<?= $min ?>">Minimalna (<?= $min ?> zł)</option>
         <option value="<?= $avg ?>">Średnia (<?= $avg ?> zł)</option>
     </select>
-    </label>
+    </label><br>
     <label>Do:
     <select name="price_to">
         <option value="<?= $avg ?>">Średnia (<?= $avg ?> zł)</option>
         <option value="<?= $max ?>">Maksymalna (<?= $max ?> zł)</option>
     </select>
     </label>
-<button type="submit">Filtruj</button>
+    <br>
+    <button type="submit">Filtruj</button>
 </form>
+
+<!-- <h2>Zadanie 3</h2>
+<form method="post">
+<input type="radio" name="price_form" id="price_form" value="<?#$min ?>">
+<label for="price_form">Od: <? #$min ?> zł</label>
+<input type="radio" name="price_to" id="price_to" value="<? #$max ?>">
+<label for="price_to">Do: <? #$max ?> zł</label>
+<br>
+<button>Filtruj</button>
+</form> -->
 
 <h3>Wyniki:</h3>
 <ul>
