@@ -36,8 +36,8 @@ select customerName from customers
 where customerID not in (select customerID from orders where shipperID = (select shipperID from shippers where ShipperName = 'Speedy Express'));
 
 -- 10. Wszystkie informacje o klientach, mających tę samą wartość w polu CustomerName (może wpisanych przez pomyłkę?)
-select customerName, contactName, address, city, postalCode, country from customers
-where customerName in (select customerName from customers group by customerName having count(customerName) > 1);
+select customerName, contactName, Address, city, PostalCode, country from customers
+where customerName in (select customerName from customers group by customerName having count(*) > 1);
 
 -- update
 
@@ -53,6 +53,10 @@ set shipperID = (select shipperID from shippers where ShipperName = 'United Pack
 where customerID in (select customerID from customers where country = 'UK');
 
 
-
 -- 13. Dodaj nowy produkt z kategorii Confections dostarczony przez Exotic Liquid 
+insert into products (productName, Price)
+values ('Chocolate Fudge', 5.99);
+
 update products
+set supplierID = (select supplierID from suppliers where supplierName = 'Exotic Liquids')
+where categoryID = (select categoryID from categories where categoryName = 'Confections');
