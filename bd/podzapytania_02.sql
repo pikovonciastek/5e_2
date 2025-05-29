@@ -89,14 +89,23 @@ where SupplierID in (
 );
 
 -- 7. Usuń wszystkie zamówienia z Orders złożone przez klientów z Londynu ('London').
-
+delete from orders
+where CustomerID in (
+    select CustomerID from customers where City = 'london'
+);
  
 -- Podzapytania wybierające jedną wartość
 -- 1. Podaj wszystkie produkty których cena jest mniejsza niż średnia cena produktu danej kategorii 
-
+select ProductName as Produkty
+from Products p
+where Price < (
+    select avg(Price)
+    from Products
+    where CategoryID = p.CategoryID
+);
 
 -- 2. Dla każdego produktu podaj jego nazwę, cenę, średnią cenę wszystkich produktów oraz różnicę między ceną produktu a średnią ceną wszystkich produktów
- 
+ select ProductName as Nazwa, avg(price),  price - avg(price) from products;
  
  
  

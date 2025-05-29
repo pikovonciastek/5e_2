@@ -75,7 +75,7 @@ where year(orderdate) = 1996;
 
 -- 11. Usuń z tabeli Orders wszystkie zamówienia z 1996 roku
 delete from orders
-where year(orderdate) = '1996%';
+where year(orderdate) = 1996;
 
 -- 12. Do tabeli Archiwum dodaj wszystkie dane dotyczące zamówień ze stycznia 1997 roku
 insert into archiwum
