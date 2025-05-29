@@ -105,17 +105,28 @@ where Price < (
 );
 
 -- 2. Dla każdego produktu podaj jego nazwę, cenę, średnią cenę wszystkich produktów oraz różnicę między ceną produktu a średnią ceną wszystkich produktów
- select ProductName as Nazwa, avg(price),  price - avg(price) from products;
- 
- 
+select ProductName as Nazwa, (select avg(price) from products) as Sredna_Cena, Price - (select avg(price) from products) as roznica from products;
  
  
  
 -- ------------------ NIETYPOWE ----------------------------------------------------------------------------
 -- 1. Podaj produkty kupowane przez więcej niż 10 klientów (lub 10 różnych klientów - wsk. utwórz zapytanie wybierające różne wiersze CustomerID, ProductID z tabel Orders i OrdersDetalis i użyj jako podzapytanie w części FROM)
+
  
 -- 2. Wybierz nazwy i numery telefonów klientów, którzy kupili więcej niż 3 różne produkty z kategorii .Confections.
- 
+select c.CustomerName, c.ContactName
+from Customers c
+where c.CustomerID in (
+    select o.CustomerID
+    from Orders o
+    join Order_Details od on o.OrderID = od.OrderID
+    join Products p on od.ProductID = p.ProductID
+    join Categories cat on p.CategoryID = cat.CategoryID
+    where cat.CategoryName = 'Confections'
+    group by o.CustomerID
+    having count(distinct p.ProductID) > 3
+);
+
 -- 3. Dla każdego produktu podaj maksymalną liczbę zamówionych jednostek
  
 -- 4. Dla każdego produktu podaj jego nazwę kategorii, nazwę produktu, cenę, średnią cenę wszystkich produktów danej kategorii oraz różnicę między ceną produktu a średnią ceną wszystkich produktów danej kategorii.
