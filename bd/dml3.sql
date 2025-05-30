@@ -24,13 +24,8 @@ select * from orders
 where year(orderdate) = 1996;
 
 -- 6. Utwórz tabelę  Archiwum_Kontrahentów z danymi: nazwa dostawcy lub nazwa klienta, osoba do kontaktu, miasto, kraj z Włoch
-create table archiwum_kontrahentów (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nazwa_kontrahenta VARCHAR(255) NOT NULL,
-    osoba_do_kontaktu VARCHAR(255),
-    miasto VARCHAR(100),
-    kraj VARCHAR(100) DEFAULT 'Włochy'
-);
+create table archiwum_kontrahentow 
+    select suppliername, contactname, City, Country from customers where Country = 'Italy';
 
 -- 7. Usuń klientów i dostawców z Włoch z tabel Customers i Suppliers
 update orders
