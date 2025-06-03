@@ -12,15 +12,15 @@ select concat_ws(' ', address, PostalCode, City) adres from suppliers;
 
 -- SUBSTRING    SUBSTR   MID pozycja może być ujemna (liczymy wtedy od końca)
 -- 4. Z nazwy produkt od trzeciego znaku dwa znaki
-select substring('produkt' from 3 for 2); 
+select substring(productname from 3 for 2) from products; 
 
 -- 5 Shippers, wyświetlamy sam numer kierunkowy
 select substring(Phone from 2 for 3) kierunkowy from shippers;
 
 -- 6. wyświetlamy przedostatni znak z Phone (pesel)
+select substring(phone from -2 for 1) pesel from shippers;
 
 -- LEFT
-
 -- 7. Wypisz 12 pierwszych znaków z nazwy każdego klienta
 select left(CustomerName, 12) from customers;
 
@@ -32,24 +32,26 @@ select concat(left(ProductName, 7), '...') from products;
 -- REVERSE
 
 -- CHAR_LENGTH długość w znakach
-
 -- 9. Wypisz kraje, z których pochodzą dostawcy, a w osobnej kolumnie długość nazwy kraju 
+select country, char_length(country) as dlugosc from suppliers;
 
 -- 10. Ile najwięcej znaków mają nazwy klientów? Wypisz.
+select char_length(CustomerName) from customers --group by max(char_length(CustomerName));
 
 -- 11. Dodatkowo wypisz najdłuższą nazwę lub nazwy
 
--- LENGTH długość w bajtach
 
+-- LENGTH długość w bajtach
 -- 12. Wypisz długości nazw produktów używając funkcji char_length i length. Czy jest jakaś różnica?
 
 -- UPPER 
-
 -- 13. Wypisz nazwy kategorii zapisane wielkimi literami
+select upper(CategoryName) from categories;
 
 -- LOWER
-
 -- 14. Wypisz nazwy produktów małymi literami
+select lower(productname) from products;
+
 
 -- SUBSTRING_INDEX
 
