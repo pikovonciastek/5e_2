@@ -3,6 +3,16 @@ $link = new mysqli ("localhost", "root", "", "w3schools");
 $sql = "select * from suppliers";
 $result = $link -> query($sql);
 $suppliers = $result -> fetch_all(1);
+
+$supplierF= $_POST['supplier'] ?? null;
+$productF= $_POST['product'] ?? null;
+$priceF= $_POST['price'] ?? null;
+if ($supplierF, $productF, $priceF) {
+   $sql="insert into products(SupplierID, ProductName, Price) values($supplierF, '$productF', $priceF)";
+    $result = $link -> query($sql);
+    $newproduct = $result -> fetch_all(1);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
