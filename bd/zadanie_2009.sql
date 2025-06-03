@@ -13,8 +13,3 @@ where adres.metraz > 90 and osoby.liczba_osob = 1;
 
 
 -- d) Podaj, ile jest kobiet, a ilu mężczyzn wśród właścicieli mieszkań (uwaga: jeżeli jedna osoba jest właścicielem więcej niż jednego mieszkania, to liczymy ją tylko raz). Możesz wykorzystać fakt, że w danych imiona wszystkich kobiet (i tylko kobiet) kończą się literą „a”.
-SELECT
-    CASE WHEN imie LIKE '%a' THEN 'kobiety' ELSE 'mezczyzni' END AS plec,
-    COUNT(DISTINCT nazwisko) AS liczba_osob
-FROM osoby
-GROUP BY plec;

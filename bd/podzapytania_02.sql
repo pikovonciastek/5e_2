@@ -128,13 +128,47 @@ where c.CustomerID in (
 );
 
 -- 3. Dla każdego produktu podaj maksymalną liczbę zamówionych jednostek
- 
+select distinct ProductName, max(quantity) from products 
+join Order_Details on products.ProductID = Order_Details.ProductID
+group by ProductName;
+
+
 -- 4. Dla każdego produktu podaj jego nazwę kategorii, nazwę produktu, cenę, średnią cenę wszystkich produktów danej kategorii oraz różnicę między ceną produktu a średnią ceną wszystkich produktów danej kategorii.
- 
+select ProductName, CategoryName, round(Price), 
+       round((select avg(Price) from Products where CategoryID = p.CategoryID)) as Srednia_Cena,
+       Price - round((select avg(Price) from Products where CategoryID = p.CategoryID)) as roznica
+       from Products p
+join Categories c on p.CategoryID = c.CategoryID;
+
+
 -- 5. Podaj łączną wartość zamówienia o numerze 1025 (uwzględnij cenę za przesyłkę). 
- 
+select sum(od.Quantity * p.Price) as laczna_Wartosc
+from Orders o
+join Order_Details od on o.OrderID = od.OrderID
+join Products p on od.ProductID = p.ProductID
+where o.OrderID = 1025;
+
 -- 6. Podaj łączną wartość zamówień każdego zamówienia (uwzględnij cenę za przesyłkę).
- 
+select o.OrderID, sum(od.Quantity * p.Price) as laczna_Wartosc
+from Orders o
+join Order_Details od on o.OrderID = od.OrderID
+join Products p on od.ProductID = p.ProductID
+group by o.OrderID;
+
 -- 7. Podaj produkty kupowane przez więcej niż jednego klienta
- 
+select distinct p.ProductName
+from Products p
+join Order_Details od on p.ProductID = od.ProductID
+join Orders o on od.OrderID = o.OrderID
+join Customers c on o.CustomerID = c.CustomerID
+group by p.ProductID
+having count(distinct c.CustomerID) > 1;
+
 -- 8. Podaj produkty kupowane przez więcej niż 20 klientów
+select p.ProductName, count(c.CustomerID)
+from Products p
+join Order_Details od on p.ProductID = od.ProductID
+join Orders o on od.OrderID = o.OrderID
+join Customers c on o.CustomerID = c.CustomerID
+group by p.ProductID
+having count(distinct c.CustomerID) > 20;

@@ -24,6 +24,7 @@ select * from orders
 where year(orderdate) = 1996;
 
 -- 6. Utwórz tabelę  Archiwum_Kontrahentów z danymi: nazwa dostawcy lub nazwa klienta, osoba do kontaktu, miasto, kraj z Włoch
+
 create table archiwum_kontrahentow 
     select suppliername, contactname, City, Country from customers where Country = 'Italy';
 
@@ -31,11 +32,15 @@ create table archiwum_kontrahentow
 update orders
 set customerid = null
 where customerid in (select customerid from customers where country = 'Italy');
+
+
 delete from customers
 where country = 'Italy';
 
+
 delete from products
 where supplierid in (select supplierid from suppliers where country = 'Italy');
+
 delete from suppliers
 where country = 'Italy';
 
