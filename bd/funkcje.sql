@@ -36,7 +36,7 @@ select concat(left(ProductName, 7), '...') from products;
 select country, char_length(country) as dlugosc from suppliers;
 
 -- 10. Ile najwięcej znaków mają nazwy klientów? Wypisz.
-select char_length(CustomerName) from customers --group by max(char_length(CustomerName));
+select char_length(CustomerName), max(char_length(CustomerName)) from customers;
 
 -- 11. Dodatkowo wypisz najdłuższą nazwę lub nazwy
 
