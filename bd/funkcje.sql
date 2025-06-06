@@ -58,6 +58,10 @@ select lower(productname) from products;
 -- 15. oddziel imie i nazwisko z pola  ContactName
 select SUBSTRING_INDEX(contactname, ' ', 1) as imie, SUBSTRING_INDEX(contactname, ' ', -1) as nazwisko from suppliers;
 
+
+SELECT ContactName, SUBSTRING_INDEX(ContactName, ' ', 1) AS Imie, (SUBSTRING(ContactName, LOCATE(' ', ContactName) + 1)) AS Nazwisko
+FROM suppliers;
+
 -- FORMAT   pl_PL
 -- 16. Wypisz ceny produktów zaokrąglone do jednego miejsca po przecinku
 select format(round(price), 1,'pl-PL') as cena from products;

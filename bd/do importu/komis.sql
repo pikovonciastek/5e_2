@@ -14,4 +14,3 @@ create table Rejestry(id integer primary key, operacja integer  references Opera
 create table Handlowcy(login varchar(10), imie varchar(15), nazwisko varchar(50), email varchar(30), data_wpisu date, autor_wpisu varchar(20));
 
 create table Rezerwacje(id integer, klient integer references Klienci(id), samochod integer references Samochody(id), data_rez date, data_wpisu date, autor_wpisu varchar(20));
-
