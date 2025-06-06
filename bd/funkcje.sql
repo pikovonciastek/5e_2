@@ -56,9 +56,6 @@ select lower(productname) from products;
 
 -- SUBSTRING_INDEX
 -- 15. oddziel imie i nazwisko z pola  ContactName
-select SUBSTRING_INDEX(contactname, ' ', 1) as imie, SUBSTRING_INDEX(contactname, ' ', -1) as nazwisko from suppliers;
-
-
 SELECT ContactName, SUBSTRING_INDEX(ContactName, ' ', 1) AS Imie, (SUBSTRING(ContactName, LOCATE(' ', ContactName) + 1)) AS Nazwisko
 FROM suppliers;
 
