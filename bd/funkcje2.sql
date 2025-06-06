@@ -7,7 +7,7 @@ select substring(upper(tablica) from -7 for 2) from auta;
 select substring_index(email, '@', 1) from handlowcy;
 
 -- 3. Z tabeli Handlowcy wyświetl informacje o handlowcach w postaci: imie nazwisko, e-mail (CONCAT)
-select concat(imie, ' ', nazwisko, ' ', email) from handlowcy;
+select concat(imie, ' ', nazwisko, ' ', email) as informacje from handlowcy;
 
 -- 4. Wypisz inicjały wszystkich handlowców z tabeli Handlowcy z aliasem Inicjaly oraz ich imiona i nazwiska.
 select concat(left(imie, 1), '.', left(nazwisko, 1)) as inicjaly from handlowcy;
