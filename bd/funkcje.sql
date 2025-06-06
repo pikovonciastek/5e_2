@@ -40,10 +40,11 @@ select char_length(CustomerName), max(char_length(CustomerName)) from customers;
 
 -- 11. Dodatkowo wypisz najdłuższą nazwę lub nazwy
 
+SELECT customername, CHAR_LENGTH(customername) as dlugosc FROM customers GROUP BY customername HAVING CHAR_LENGTH(customername) = (SELECT MAX(CHAR_LENGTH(customername)) FROM customers);
 
 -- LENGTH długość w bajtach
 -- 12. Wypisz długości nazw produktów używając funkcji char_length i length. Czy jest jakaś różnica?
-
+select productname, char_length(productname), length(productname) from products;
 -- UPPER 
 -- 13. Wypisz nazwy kategorii zapisane wielkimi literami
 select upper(CategoryName) from categories;
@@ -54,14 +55,15 @@ select lower(productname) from products;
 
 
 -- SUBSTRING_INDEX
-
 -- 15. oddziel imie i nazwisko z pola  ContactName
+select SUBSTRING_INDEX(contactname, ' ', 1) as imie, SUBSTRING_INDEX(contactname, ' ', -1) as nazwisko from suppliers;
 
 -- FORMAT   pl_PL
-
 -- 16. Wypisz ceny produktów zaokrąglone do jednego miejsca po przecinku
+select format(round(price), 1,'pl-PL') as cena from products;
 
 -- 17. Dla poszczególnych kategorii wypisz średnie ceny, zaokrąglone do jednego miejsca po przecinku. 
+select categoryname, format(avg(price), 1,'pl-PL') as srednia_cena from products join categories on products.categoryID = categories.categoryID group by products.CategoryID;
 
 -- LOCATE (napis1, napis2) zwraca pozycję pierwszego wystąpienia napisu1 w napisie2 POSITION (napis1 IN napis2)
 
