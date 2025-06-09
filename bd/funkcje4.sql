@@ -19,6 +19,9 @@ SELECT imie, nazwisko, DATE_FORMAT(data_zatrudnienia, '%d-%m-%Y') AS data_format
 FROM pracownicy;
 
 -- 6. Pracownik o id 102 będzie pracował na stanowisku FI_MGR w dziale 20 od dzisiaj przez  miesiąc (DATE_ADD(data, interwał)
-
+insert into pracownicy(pracownik_id, imie, nazwisko, data_zatrudnienia, stanowisko_id, dzial_id) 
+values(102, 'Szymon', 'Kowal', 'date_add(curdate(), interval 30 day)', 'FI_MGR', 20);
 
 -- 7. Dodaj nowego pracownika, zatrudnionego dzisiaj (CURDATE())
+insert into pracownicy(imie, nazwisko, data_zatrudnienia)
+values('Dominik', 'Pieta', CURDATE());
