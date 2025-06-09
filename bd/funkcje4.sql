@@ -5,14 +5,12 @@ select curdate();
 select time(now());
 
 -- 3, Ilu pracowników zatrudniono w poszczególnych miesiącach. MONTH(data)  (MONTHNAME)
-
 SELECT MONTH(data_zatrudnienia), MONTHNAME(data_zatrudnienia), COUNT(*) AS liczba_pracownikow
 FROM pracownicy
 GROUP BY MONTH(data_zatrudnienia), MONTHNAME(data_zatrudnienia);
 
 
 -- 4. Ile dni pracownicy byli zatrudnieni na poszczególnych stanowiskach (DATEDIFF(data1, data2) );  (historia_pracy)
-
 SELECT stanowisko_id, DATEDIFF(koniec, poczatek) AS suma_dni FROM historia_pracy;
 
 -- 5. Wyświetl datę zatrudnienia w formacie dzień-miesiąc-rok (DATE_FORMAT(data, format)
