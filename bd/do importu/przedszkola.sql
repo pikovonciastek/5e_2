@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 13 Sty 2022, 08:33
--- Wersja serwera: 10.1.38-MariaDB
--- Wersja PHP: 7.3.2
+-- Generation Time: Sty 10, 2025 at 10:18 AM
+-- Wersja serwera: 10.4.32-MariaDB
+-- Wersja PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `3eg_1`
+-- Database: `4e_przedszkole`
 --
 
 -- --------------------------------------------------------
@@ -32,10 +31,10 @@ CREATE TABLE `przedszkola` (
   `Id_przedszkola` int(2) DEFAULT NULL,
   `Nazwa_przedszkola` varchar(43) DEFAULT NULL,
   `Liczba_miejsc` int(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Zrzut danych tabeli `przedszkola`
+-- Dumping data for table `przedszkola`
 --
 
 INSERT INTO `przedszkola` (`Id_przedszkola`, `Nazwa_przedszkola`, `Liczba_miejsc`) VALUES
