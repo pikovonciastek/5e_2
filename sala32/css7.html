@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatowanie</title>
+</head>
+<body>
+    <h1>formatowanie tekstu</h1>
+    <p>do często używanych właściwości formatujących tekst zalicza się:</p>
+    <ol><li>color</li>
+    <li>text-allign</li>
+    <ul>
+        <li>right</li>
+        <li>left</li>
+        <li>center</li>
+        <li>justify</li>
+    </ul>
+    <li>text-decoration</li>
+    <ul>
+    <li>none</li>
+    <li>blink</li>
+    <li>underline</li>
+    <li>line-through</li>
+    <li>overline</li>    
+    </ul>
+    <b><i>ponadto text-decoration może mieć przypisany kolor lub rodzaj podkreślenia (domyślnie jest solid):</b></i>
+    <ul>
+    <li>dashed - przerywana</li>
+    <li>dooted - kropkowana</li>
+    <li>wavy - falowana</li>
+    <li>double - podwójna</li>
+    </ul>
+    <li>text-transform</li>
+    <ul>
+        <li>none - domyślnie</li>
+        <li>capitilize - pierwsze litery są zmienione na wielkie</li>
+        <li>lowercase - wszystkie na małe litery</li>
+        <li>uppercase - wszystkie na wielkie litery</li>
+    </ul>
+        <li>direction - określa, od której krawędzi danego obszaru powinno zacząć się układanie wyrazów:</li>
+        <ul>
+            <li>ltr - domyślnie</li>
+            <li>rtl - od prawej do lewej</li>
+        </ul>
+    <li>line-height - wysokość wierszy</li>
+    <ul>
+        <li>normal - domyślnie</li>
+        <li>liczba - odległość wyrażona liczbą</li>
+        <li>em - odległość wyrażona em</li>
+        <li>% - odległość wyrażona w %</li>
+        <li>inherit - wartość dziedziczona po rodzicu</li>
+    </ul>
+    <li>text-indent - wielkość wcięć w pierwszych wierszach</li>
+    <li>letter-spacing</li>
+    <li>word-spacing</li>
+    <li>white-space - (białe znaki: spacja, tabulator, znak przejścia do nowej linii):</li>
+    <ul>
+    <li>normal - domyślnie</li>
+    <li>pre</li>
+    <li>nowrap</li>
+    <li>pre-wrap</li>
+    <li>text-overflow</li>
+    </ul>
+</ol>
+<p>przykład nr 1 - zastosowanie text-decoration</p>
+<style>
+    h3 {
+    color:green;
+    text-decoration: line-through;
+    }
+</style>
+<h3>Zobacz</h3>
+
+<style>
+h4 {
+    text-decoration: underline red wavy;
+}
+</style>
+<h4>Zobacz</h4>
+
+<style>
+    h5 {
+        text-decoration: overline blue dashed;
+    }
+</style>
+<h5>Zobacz</h5>
+<p>Przykład 2 - zastosowanie text-transform</p>
+<style>
+    #blok1 {
+        color: green;
+        text-transform: capitalize;
+    }
+</style>
+<div id="blok1">Zobacz</div>
+<br>
+<style>
+    #blok2 {
+        color: red;
+        text-transform: uppercase;
+    }
+</style>
+<div id="blok2">Zobacz</div>
+<br>
+<style>
+    #blok3 {
+        color: #3344ff;
+        text-transform: lowercase;
+    }
+</style>
+<div id="blok3">Zobacz</div>
+<br>
+<p>Przykład 3 - zastosowanie line-height</p>
+<style>
+    #blok4 {
+        line-height: 3;
+        font-size: 10px;
+        color: red;
+        text-align: justify;
+    }
+</style>
+<style>
+    #blok5 {
+        line-height: 3;
+        font-size: 10px;
+        color: blue;
+        text-align: justify; 
+    }
+</style>
+<style>
+    #blok6 {
+        line-height: 3;
+        font-size: 10px;
+        color: green;
+        text-align: justify;  
+    }
+</style>
+<div id="blok4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div id="blok5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div id="blok6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+<p>przykład 4 - odstępy między literami i słowami</p>
+<style>
+    #blok7 {
+        text-indent: 30px;
+        text-align: justify;
+        letter-spacing: 3px;
+    }
+
+    #blok8 {
+        color: green;
+        text-align: justify;
+        letter-spacing: 10px;
+    }
+
+    #blok9 {
+        color: blue;
+        text-align: justify;
+        letter-spacing: nowrap;
+    }
+</style>
+<div id="blok7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<br>
+<div id="blok8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<br>
+<div id="blok9">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+</body>
+</html>

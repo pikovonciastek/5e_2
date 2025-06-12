@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selektory</title>
+</head>
+<body>
+    <h3>selektory css mogą się odnosić do elementów html, takich jak:
+        <ol><li>konretne znaczniki</li>
+            <li>indentyfikatory</li>
+            <li>klasy (class)</li>
+            <li>inne atrybuty</li></ol><br>
+            jeżeli selektorem jest dowolny znacznik HTML'a, oznacza to, że mamy do czynienia z <b>selektorem prostym.</b>
+            formatowanie znaczników polega na definiowaniu selektorów za pomocą ich nazwą.</h3>
+    <style>
+        h2 {
+            color: red;
+        }
+    </style>
+<h2>Przykład formatowania znaczników</h2>
+<p>ten sam zgrupowany selektor</p>
+<br>
+<i>dla elementu <b>(div id='stopka')</b> definiowane w CSS wygląda tak:</i>
+<style>
+    #stopka {
+        text-align: center;
+        color: green;
+    }
+</style>
+<div id="stopka">
+to jest niby stopka, która jest sformatowana</div>
+klasy definiuje się atrybutem <b>class</b>
+<br>
+<i>dla elementu <b>(div class='stopka')</b> definiowane w CSS wygląda tak:</i>
+<style>
+    .stopka {
+        text-align: center;
+        color: red;
+    }
+</style>
+<div class="stopka">
+    przykład zdefiniowanej klasy</div><br>
+    <i>jeśli chcemy sformatować część takich samych znacników na sreonie internetowej, możemy również użyć atrybutu <b>class</b>. Pozwoli to na zróżnicowanie formatowania takich samych znaczników. dla elementy <b>(p class ='inny')</b> definiowanie formaowania w arkuszu stylów CSS wygląda następująco:</i>
+<style>
+    p.inny {
+        color: red;
+    }
+</style>
+<p class="inny"> tekst przykładowy </p>
+<i>w CSS stosuje się również <b>selektory uniwersalne</b> oznaczone znakiem <b>*</b>. Mają one taką samą ważność jak definowany styl elementu <b>body</b>.<br>
+Hierarchiczny układ elementów HTML pozwala akże na stosowanie selektorów zależnych od elementów umieszczonych wyżej w hierarchii, na tym samym poziomie lub niżej. Mówimy wtedy o <b>selektorach potomka, selektor dziecka lub selektorach braci</b>.</i><br>
+Poniżej przykład selektora potomka:<br>
+<style>
+    ul li {
+        color: red;
+        font-size: 20px;
+    }
+</style>
+<ul>
+<li>Element 1</li>
+<li>Element 2</li>
+<li>Element 3</li>
+</ul>
+</body>
+</html>

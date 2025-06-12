@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    wykazy:
+    <ol>
+        <li>list-style-type</li>
+        <ul>disc</ul>
+        <ul>circle</ul>
+        <ul>square</ul>
+        <ul>disclosure-closed</ul>
+        <ul>none</ul>
+        <ul>decimal</ul>
+        <ul>lower-roman</ul>
+        <ul>upper-roman</ul>
+        <ul>lower-alpha</ul>
+        <ul>lower-greek</ul>
+    </ol>
+    <ol>
+        <li>list-style-image</li>
+        <ul>list-style-image:url("nazwa pliku z rozszerzeniem")</ul>
+        <li>list-style-position</li>
+        <ul>outside - wartość domyślna, punktor znajduje się na zewnątrz danego obszaru względem początkowej krawędzi liniowej elementu</ul>
+        <ul>inside - punktor znajduje się wewnątrz danego obszaru względem początkowej krawędzi liniowej elementu</ul>
+    </ol>
+             
+        <br>Przykład, który wyświetli trzy listy. Pierwsza z nich numeruje elementy według małych liter greckich. druga wstawia punktory będące wypełnionym trójkątem, natomiast ostastnia numeruje według alfabetu łacińskiego.
+    <style>
+        #lista1 {
+            list-style-type: lower-greek;
+            list-style-position: outside;
+        }
+        #lista2 {
+            list-style-type: disclosure-closed;
+        }
+        #lista3 {
+            list-style-type: lower-latin;
+            list-style-position: inside;
+        }
+    </style>
+
+    <ol id="lista1">
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+    </ol><hr>
+    <ul id="lista2">
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+    </ul><hr>
+
+    <ol id="lista3">
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+    </ol><hr>
+</body>
+</html>

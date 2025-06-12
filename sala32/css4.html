@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style</title>
+    <style>
+        div + p {color: red;}
+    </style>
+</head>
+<body>
+    przykład dziedziczenia w strukturze blokowej, w której są przejmowane cechy w hierarchii drzewa dokumentu. <br>
+    tego typu selektorów używa się często podczas tworzenia stylów opartych na dziedziczeniu i hierarchią drzewa.
+    <div>
+        <p>paragraf 1</p>
+            <div>
+                <p>paragraf 2</p>
+            </div>
+        <p>paragraf 3</p>
+        <p>paragraf 4</p>
+        <p>paragraf 5</p>
+    </div>
+    <p>paragraf 6</p>
+    <br>
+    podczas tworzeniu tego stylu użyto selektora "+". Spowodował on, że będą formatowane tylko elementy blokowe znajdujące się bezpośrednio w elemencie "div".
+    dlatego efekt dziedziczenia ograniczono do paragrafów 3 i 6.
+</body>
+</html>

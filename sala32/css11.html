@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style tabeli</title>
+</head>
+<body>
+    <h4>do właściwości formatujących tabelę zalicza się:</h4>
+    <br>1. border
+    <br>2. padding
+    <br>3. border-spacing
+    <br>4. caption-side
+    <br>a) top
+    <br>b) bottom
+    <br>5. border-collapse
+    <br>6. background-color
+    <br>7. text-align
+    <br>8. vertical-align
+    <br>a) middle
+    <br>b) botttom
+    <br>c) top
+    <br>9. width
+    <br>10. height
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        table {
+            width: 700px;
+            height: 300px;
+            border: 8px #0066FF groove;
+            caption-side: top;
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px grey solid;
+            color: #0066CC;
+            font-size: large;
+        }
+
+        .zdj { 
+            background-color: #FFFF99;
+        }
+    </style>
+
+    <table>
+        <caption>Zabytki Rzymu</caption>
+        <tr>
+            <td class="zdj"><img src="koloseum.jpeg"></td>
+            <td class="zdj"><img src="bazylika.jpeg"></td>
+            <td class="zdj"><img src="fontanna.jpeg"></td>
+        </tr><tr>
+            <td>koloseum</td>
+            <td>Fontanna di Trevi</td>
+            <td>Bazylika św. Piotra</td>
+        </tr>
+    </table>
+</body>
+</html>

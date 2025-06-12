@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <font color="red"> 1. Border-width</font><br>
+    <ol type="A">
+    <li>border-top-width</li>
+    <li>border-right-width</li>
+    <li>border-bottom-width</li>
+    <li>border-left-width</li>
+    </ol>
+    <font color="red">2.Border-style</font><br>
+    <ol type="A">
+    <li>solid</li>
+    <li>double</li>
+    <li>dotted</li>
+    <li>dashed</li>
+    <li>groove</li>
+    <li>ridge</li>
+    <li>inset</li>
+    <li>outset</li>
+    </ol>
+    <font color="red">3.border-color</font><br>
+    <font color="red">4.border-radius</font><br>
+    <font color="red">5.border-image</font><br>
+    <br> Przykład 1
+    <style>
+        p {
+            width: 200px;
+            height: 100px;
+            border: 5px dashed blue;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <p>ten tekst będzie w ramce 5px przerywanej w kolorze niebieskim</p>
+    <br> przykład 2
+    <style>
+        .solid {
+            border-style: solid;
+        }
+        .dashed {
+            border-style: dashed;
+        }
+        .dotted {
+            border-style: dotted;
+        }
+    </style>
+    <h3 class="solid">Paragraf 1</h3>
+    <h3 class="dashed">Paragraf 2</h3>
+    <h3 class="dotted">Paragraf 3</h3>
+    <br>Przykład 3<br>
+    <style>
+        .b-1 {
+            border-style: solid;
+            border-width: 1px;
+        }
+        .b-2 {
+            border-style: solid;
+            border-width: 2px;
+        }
+        .b-5 {
+            border-style: solid;
+            border-width: 5px;
+        }
+    </style>
+
+    <h3 class="b-1">Obramowanie o grubości 1px</h3>
+    <h3 class="b-2">Obramowanie o grubości 2px</h3>
+    <h3 class="b-5">Obramowanie o grubości 5px</h3>
+
+    <br>Przykład 4 <br>
+    <style>
+        .border {
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+    </style>
+    <h3 class="border">Obramowanie z zaokrąglonymi rogami</h3><br>
+
+    <br>Przykład 5 <br>
+    <style>
+        h5 {
+            border-left-color: #c0c0c0;
+            border-left-style: solid;
+        }
+    </style>
+    <h5>lewa krawędź w kolorze białym</h5>
+
+    <br>Przykład 6 <br>
+    <style>
+        h4 {
+            border-color: #ffff00 #000080;
+            border-style: ridge;
+        }
+    </style>
+    <h4>Nagłówek z dwoma określeniami koloru obramowania</h4>
+
+    <br>przykład 7 <br>
+    <style>
+        h6 {
+            border-color: #800080 red;
+            border-style: dashed double;
+        }
+    </style>
+    <h6>Nagłówek z dwoma kolorami i stylami</h6>
+
+    
+</body>
+</html>

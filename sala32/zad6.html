@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie niedomowe</title>
+</head>
+<body>
+    <!--tabela 5x4 o 700x600px wymiarach o drapieżnych rybach w polsce. wiersz pierwszy ma być scalony i kolorem #00838F z napisem "Ryby drapieżne wód w polsce", tekst helvetica, kolor biały, rozmiar 20px, wyśrodkowany.
+    wiersz niżej klor wypełnienia #07dcef, kolor czcionki czarny, rozmiar 16px.
+    obramowanie tabeli 2px kolor czarny, a obramowanie komórek 1px kolor szary-->
+    <style>
+        table {
+            width: 700px;
+            height: 600px;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        th, td {
+            border: 1px solid gray;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #00838F;
+            color: white;
+            font-size: 20px;
+            font-family: Helvetica;
+            text-align: center;
+        }
+        td {
+            color: black;
+            font-size: 16px;
+        }
+
+        .jeden {
+            background-color: #07dcef;
+        }
+
+        img {
+            width: 300px;
+            height: 175px;
+        }
+    </style>
+    <table>
+        <tr>
+            <th colspan="5">Ryby drapieżne wód w polsce</th>
+        </tr>
+        <tr class="jeden">
+            <td>Lp.</td>
+            <td>Gatunek</td>
+            <td>Występowanie</td>
+            <td>Zdjęcie</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Szczupak</td>
+            <td>stawy, rzeki</td>
+            <td class="jeden"><img src="szczupak.jpg"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sandacz</td>
+            <td>stawy, rzeki, jeziora</td>
+            <td class="jeden"><img src="sandacz.jpg"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>okoń</td>
+            <td>rzeki</td>
+            <td class="jeden"><img src="okoń.jpg"></td>
+        </tr>
+    </table>
+</body>
+</html>

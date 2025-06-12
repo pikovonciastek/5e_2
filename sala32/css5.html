@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style5</title>
+    <style>
+        body {
+            color: red}
+        div ~ p{
+            color: blue}
+    </style>
+</head>
+<body>
+    <div>
+        ten tekst jest czerwony, ponieważ dziedziczy z body oraz nie jest elementem "p", który byłby jednym z braci "div". <br>
+    </div>
+    <div>
+        <p>ten tekst nie jest niebieski, ponieważ nie jest bratem tylko dzieckiem elementu "div".</p>
+    </div>
+    <p>ten tekst jest koloru niebieskiego, ponieważ ten element "p" jest bratem elementu "div".</p>
+    Tylda ~ jest selektorem braci (leżą w tym samym rzędzie hierarchii). Dzięki temu symbolowi można nadać określone atrybuty wszystkim braciom, których nazwę w deklaracji podano jako drugą.
+</body>
+</html>

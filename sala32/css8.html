@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css8</title>
+</head>
+<body>
+    <style>
+        h2 {
+            font-style: italic;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            text-decoration: underline double;
+        }
+    </style>
+    <h3>formatowanie czcionki</h3>
+    <h4>do najczęściej używanych właściwości formatujących tekst zalicza się</h4>
+    <ol>
+        <li> 
+            font-style => służy do określenia dodatkowego stylu czcionki wybranego tekstu, właśność ta może mieć postać: 
+            <ul><li>normal - domyślnie</li>
+            <Li>italic</Li>
+            <li>oblique - czcionka ukośna</li></ul>
+        </li>
+    <br>
+    <li>
+        font-family => określenie rodzaju czcionki danego tekstu, np. <i>font-family: nazwa, generic</i> gdzie nazwa to nazwa rodzaju czcionki, a generic określa nazwę rdzaju ogólnego czcionki.
+    </li>
+        <br>
+        <li>
+            font-size => rozmiar czcionki, przyjmuje wartości takie jak:
+            <ul>
+                <li>xx-small</li>
+                <li>x-small</li>
+                <li>small</li>
+                <li>medium</li>
+                <li>large</li>
+                <li>x-large</li>
+                <li>xx-large</li>
+                <li>smaller</li>
+                <li>larger</li>
+            </ul>
+        </li>
+        <br>
+        <li>
+            font-weight => grubość czcionki, wartości takie jak:
+            <ul>
+                <li>normal - domyślnie</li>
+                <li>bold</li>
+                <li>lighter</li>
+                <li>bolder</li>
+            </ul>
+        </li>
+        <br>
+        <li>
+        font-variant => dodatkowy wariant czcionki:
+        <ul>
+            <li>normal</li>
+            <li>small-caps => zamienia małe litery tekstu na duże, ale w małym rrozmiarze</li>
+        </ul>
+        </li>
+    </ol>
+    <br>
+    <h2>przykład 1</h2>
+    <style>
+        #blok1 {
+            color: magenta;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #blok2 {
+            font-style: oblique;
+            font-family: Arial, sans-serif;
+        }
+
+        #blok3 {
+            color: green;
+            font-family: verdana;
+            font-style: italic;
+        }
+    </style>
+    <div id="blok1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum, magna vitae bibendum blandit, est purus convallis ante, eu varius ligula ligula vel justo. Morbi scelerisque ornare fringilla. Quisque id sapien tristique, dapibus sem eget, finibus magna. Morbi accumsan dui nulla, ut rhoncus leo accumsan ut. Integer arcu elit, pulvinar a mauris et, mollis commodo diam. Donec ultricies eleifend ipsum, non semper ex volutpat quis. Aliquam porta ligula sed vehicula volutpat. Pellentesque viverra eget mauris nec finibus. </div>
+    <br>
+    <div id="blok2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum, magna vitae bibendum blandit, est purus convallis ante, eu varius ligula ligula vel justo. Morbi scelerisque ornare fringilla. Quisque id sapien tristique, dapibus sem eget, finibus magna. Morbi accumsan dui nulla, ut rhoncus leo accumsan ut. Integer arcu elit, pulvinar a mauris et, mollis commodo diam. Donec ultricies eleifend ipsum, non semper ex volutpat quis. Aliquam porta ligula sed vehicula volutpat. Pellentesque viverra eget mauris nec finibus. </div>
+    <br>
+    <div id="blok3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum, magna vitae bibendum blandit, est purus convallis ante, eu varius ligula ligula vel justo. Morbi scelerisque ornare fringilla. Quisque id sapien tristique, dapibus sem eget, finibus magna. Morbi accumsan dui nulla, ut rhoncus leo accumsan ut. Integer arcu elit, pulvinar a mauris et, mollis commodo diam. Donec ultricies eleifend ipsum, non semper ex volutpat quis. Aliquam porta ligula sed vehicula volutpat. Pellentesque viverra eget mauris nec finibus. </div>
+
+    <h2>przykład 2</h2>
+    <p style="font-size: 12px;">Kwalifikcja INF.03</p>
+    <p style="font-size: large">Kwalifikcja INF.03</p>
+    <p style="font-size: x-large">Kwalifikcja INF.03</p>
+    <p style="font-size: xx-large">Kwalifikcja INF.03</p>
+    <p style="font-size: small">Kwalifikcja INF.03</p>
+    <p style="font-size: x-small">Kwalifikcja INF.03</p>
+    <p style="font-size: xx-small">Kwalifikcja INF.03</p>
+    <p style="font-size: medium">Kwalifikcja INF.03</p>
+
+    <h2>Przykład 3</h2>
+    <p style="font-weight: 100; font-family: Arial;">tekst pogrubiony 100</p>
+    <p style="font-weight: 500; font-family: Arial;">tekst pogrubiony 500</p>
+    <p style="font-weight: bold; font-family: Arial;">tekst pogrubiony bold</p>
+    <p style="font-weight: 900; font-family: Arial;">tekst pogrubiony 900</p>
+
+    <h2>przykład 4</h2>
+    <p style="font-variant: small-caps;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum, magna vitae bibendum blandit, est purus convallis ante, eu varius ligula ligula vel justo. Morbi scelerisque ornare fringilla. Quisque id sapien tristique, dapibus sem eget, finibus magna. Morbi accumsan dui nulla, ut rhoncus leo accumsan ut. Integer arcu elit, pulvinar a mauris et, mollis commodo diam. Donec ultricies eleifend ipsum, non semper ex volutpat quis. Aliquam porta ligula sed vehicula volutpat. Pellentesque viverra eget mauris nec finibus.</p>
+</body>
+</html>
