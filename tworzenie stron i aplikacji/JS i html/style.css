@@ -1,0 +1,23 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+}
+
+.dark-theme {
+    --bg-color: black;
+    --text-color: yellow;
+
+}
+
+div {
+    font-size: 50px;
+}
+
+p {
+    font-size: 25px;
+}
