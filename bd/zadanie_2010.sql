@@ -8,8 +8,7 @@ UNION
 
 
 -- b) W którym dniu urodziło się najwięcej dzieci? Podaj datę i liczbę dzieci. Uwaga: Jest tylko jeden taki dzień.
-SELECT data_urodzenia, COUNT(*) AS liczba_dzieci
-FROM noworodki
+SELECT data_urodzenia, COUNT(*) as liczba_dzieci FROM noworodki
 GROUP BY data_urodzenia
 ORDER BY liczba_dzieci DESC
 LIMIT 1;
