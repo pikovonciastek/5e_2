@@ -1,9 +1,7 @@
 <?php
 $link = new mysqli('localhost', 'root', '', '4e_2_pilka');
-$sql = "SELECT zespol1, zespol2, wynik, data_rozgrywki FROM rozgrywka";
+$sql = "select zespol1, zespol2, wynik, data_rozgrywki from rozgrywka where zespol1 = 'EVG'";
 $result = $link->query($sql);
-
-
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +24,8 @@ $result = $link->query($sql);
 <?php
 while ($row = $result->fetch_assoc()) {
     echo "<div class='rozgrywka'>";
-    echo "<p>{$row['zespol1']} - {$row['zespol2']} {$row['wynik']}</p>"; 
+    echo "<p>{$row['zespol1']} - {$row['zespol2']}</p>";
+    echo "<p>{$row['wynik']}</p>"; 
     echo "<p>{$row['data_rozgrywki']}</p>";
     echo "</div>";
 }
@@ -64,7 +63,7 @@ while ($row = $result->fetch_assoc()) {
 
 <section class="prawy">
     <img src="zad1.png" alt="piłkarz">
-    <p>Autor: OOOOOOOOOOOO</p>
+    <p>Autor: 0000000000</p>
 </section>
 
 </body>
