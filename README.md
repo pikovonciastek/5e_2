@@ -1,2 +1,2 @@
 ﻿# szkola
- Hejnik, gryko, pietraszek, daniel
+ Hejnik, gryko, pietraszek
