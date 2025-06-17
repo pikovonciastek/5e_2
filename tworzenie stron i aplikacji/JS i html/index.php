@@ -39,5 +39,31 @@
             body.classList.toggle("dark-theme");
         });
     </script>
+
+
+    <h2>Kontakt</h2>
+    <form action="" method="post" id="kontakt">
+    <input type="text" id="imie" placeholder="Twoje imię">
+    <input type="email" id="email" placeholder="Twój email">
+    <button type="submit">Wyślij</button>
+    </form>
+    <p id="komunikat">???</p>
+
+    <script type="text/javascript">
+        let formularz = document.getElementById('kontakt');
+        let komunikat=document.getElementById('komunikat');
+        formularz.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let imie = document.getElementById('imie').value.trim();
+        let email = document.getElementById('email').value.trim();
+        if (imie === '' || email === ''){
+            komunikat.textContent = 'uzupełnij wszystkie pola';
+            komunikat.style.color='red';
+        } else {
+            komunikat.textContent = `Dziękujemy, ${imie}!`;
+            komunikat.style.color='green';
+        }});
+    </script>
+    
 </body>
 </html>

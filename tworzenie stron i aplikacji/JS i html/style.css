@@ -21,3 +21,8 @@ div {
 p {
     font-size: 25px;
 }
+
+input, button {
+    display: block;
+    margin: 10px 0;
+}
