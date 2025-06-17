@@ -1,2 +1,2 @@
 ﻿# szkola
- Hejnik, gryko itd
+ Hejnik, gryko, pietraszek, daniel
