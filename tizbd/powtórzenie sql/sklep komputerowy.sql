@@ -55,26 +55,44 @@ select nazwa, cena from Produkty where cena >= 180 ORDER BY cena, nazwa DESC;
 
 
 -- 10. Wyświetl wszystkie dane z z tabeli produkty oraz wszystkie dane z tabeli producenci 
-select * from Produkty join Producenci ON produkty.kod = Producenci.kod;
+select * from Produkty join Producenci ON produkty.producent = Producenci.kod;
 
 -- 11. Wyświetl nazwę produktu, cenę i nazwę producenta dla wszystkich produktów 
-select produkty.nazwa, produkty.cena, producenci.nazwa as Producent from Produkty join Producenci on produkty.kod = Producenci.kod;
+select produkty.nazwa, produkty.cena, producenci.nazwa as Producent from Produkty join Producenci on produkty.producent = Producenci.kod;
 
 -- 12. Wyświetl średnią cenę produktów każdego producenta, pokazując tylko kod producenta
-select producenci.kod, AVG(produkty.cena) from Produkty join Producenci on produkty.kod = Producenci.kod GROUP BY produkty.cena;
+select producent, avg(cena) from produkty group by producent;
 
 -- 13. Wyświetl średnią cenę produktów każdego producenta, pokazując nazwę producenta 
+select avg(produkty.cena) as srednia_cen, producenci.nazwa from Produkty join Producenci on produkty.producent = Producenci.kod GROUP BY producenci.nazwa;
 
 -- 14. Wyświetl nazwę każdego producenta, którego produkty mają średnią cenę większą lub równą $150
+select avg(produkty.cena) as srednia_cen, producenci.nazwa from Produkty join Producenci on produkty.producent = Producenci.kod GROUP BY producenci.nazwa having avg(produkty.cena) >= 150;
 
 -- 15. Wyświetl nazwę i cenę najtańszego produktu  (LIMIT lub podzapytanie)
+select produkty.nazwa, cena from produkty order by cena ASC limit 1;
+insert into produkty (nazwa, cena, producent) values ('RAM', 15, 2);
 
+
+select min(cena) from produkty;
+
+select nazwa, cena from produkty where cena = (select min(cena) from produkty);
 -- 16.Wyświetl nazwę każdego producenta razem z nazwą i ceną jego najdroższego produktu 
+select pro.nazwa, cena, producenci.nazwa from produkty pro join producenci on pro.producent =  producenci.kod where cena = (select max(cena) from produkty p where p.producent = pro.producent);
 
 -- 17. Dodaj nowy produkt:  Loudspeakers, $70, producent 2.
+insert into produkty (nazwa, cena, producent) values ('Loudspeakers', 70, 2);
 
 -- 18. Zmień nazwę produktu o kodzie 8 na "Laser Printer".
+update produkty
+set nazwa = 'Laser Printer'
+where kod = 8;
 
 -- 19. Wykonaj 10% przecenę każdego produktu 
+update produkty
+set cena = cena * 0.9; 
 
 -- 20. Wykonaj 10% przecenę każdego produktu o cenie większej lub równiej $120.
+update produkty 
+set cena = cena * 0.9
+where cena >= 120;
