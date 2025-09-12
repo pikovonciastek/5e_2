@@ -79,12 +79,14 @@ set budzet = budzet * 0.9;
 
 -- 19. przenieś pracowników z działu Research  do działu IT  .
 update pracownicy
-set 
+set dzial = (select kod from dzialy where nazwa = "IT")
+where dzial = (select kod from dzialy where nazwa = "Research");
 
 -- 20. Usuń wszystkich pracowników pracujących w dziale   IT.
 delete from pracownicy where dzial = 14;
 
 -- 21. Usuń wszystkich pracowników, którzy pracują w działach z budżetem większym bądź równym $60,000 (60 tysięcy)
-delete from pracownicy  join dzialy on dzialy.kod = pracownicy.dzial where budzet
+delete pracownicy from pracownicy join dzialy on dzialy.kod = pracownicy.dzial where dzialy.budzet >= 60000;
 
 -- 22. Usuń wszystkich pracowników
+delete from pracownicy;
