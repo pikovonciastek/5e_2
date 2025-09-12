@@ -21,7 +21,7 @@ create table magazyny (
 create table kontenery (
     kod char(4) primary key,
     zawartosc text,
-    wartosc 
+    wartosc double(6,2)
 )
 
 
