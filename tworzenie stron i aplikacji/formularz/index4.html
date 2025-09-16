@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Losowanie uczniów</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        input, button {
+            display: block;
+            margin: 1px 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" data-staszic = "dol" placeholder="najniższy numerek" min="1">
+    <br>
+    <input type="number" data-staszic = "gora" placeholder="najwyższy numerek" max="32">
+    <br>
+    <input type="number" data-staszic="ilosc" placeholder="ilość uczniów którz mają być odpytani">
+    <br>
+    <button type="submit" data-staszic="guzik" onclick="losowanie()">Start</button>
+    <p data-staszic="wylosowani"></p>
+
+
+
+    <script>
+        
+    </script>
+</body>
+</html>

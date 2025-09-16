@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        input, button {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" method="post" id="kontakt">
+        <input type="text" id="imie" placeholder="imię">
+        <input type="email" id="email" placeholder="email">
+        <button type="submit">Wyślij</button>
+    </form>
+    <p id="komunikat"></p>
+    
+
+    
+    <script>
+    let formularz = document.getElementById('kontakt');
+    let komunikat = document.getElementById('komunikat');
+    formularz.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let imie = document.getElementById('imie').value.trim();
+    let email = document.getElementById('email').value.trim();
+    if (imie === '' || email === ''){
+    komunikat.textContent = 'uzupełnij wszystkie pola!';
+    komunikat.style.color = 'red';
+    } else {
+        komunikat.textContent = `Dziękujemy, ${imie}!`;
+        komunikat.style.color = 'green';
+    }});
+    </script>
+</body>
+</html>

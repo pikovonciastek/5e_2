@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przedział</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        
+        input, button {
+            display: block;
+            margin: 1px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="przedzial">
+        <input type="number" id="liczba1" placeholder="Podaj początkową wartość">
+        <br>
+        <input type="number" id="liczba2" placeholder="Podaj końcową wartość">
+        <button type="submit" id="przycisk">Znajdź przedział</button>
+        <p id="wynik"></p>
+    </div>
+
+    <script>
+        let szukaj = document.getElementById("przycisk");
+        let wynik = document.getElementById("wynik");
+        szukaj.addEventListener('click', () => {
+            let start = document.getElementById("liczba1").value.trim();
+            let end = document.getElementById("liczba2").value.trim();
+            let wyslij= "";
+            for (let i = parseInt(start); i <= parseInt(end); i++){
+                wyslij += i.toString()+ " ";
+            }
+            wynik.textContent = `Przdział od ${start} do ${end} to ${wyslij}.`;
+        });
+    </script>
+</body>
+</html>

@@ -75,7 +75,7 @@
 
 
     <footer>
-        <p>Stronę wykonał: xxxxxxxxx</p>
+        <p>Stronę wykonał: Najlepsi 😎</p>
     </footer>
 </body>
 </html>
