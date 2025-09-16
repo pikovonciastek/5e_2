@@ -25,10 +25,26 @@
     <button type="submit" data-staszic="guzik" onclick="losowanie()">Start</button>
     <p data-staszic="wylosowani"></p>
 
-
-
     <script>
-        
+        let guzik = document.querySelector('[data-staszic="guzik"]');
+        let wpisz = document.querySelector('[data-staszic="wylosowani"]');
+
+        function losowanie(){
+            let n1 = document.querySelector('[data-staszic = "dol"]').value;
+            let n2 = document.querySelector('[data-staszic = "gora"]').value;
+            let u = document.querySelector('[data-staszic = "ilosc"]').value;
+
+            u = parseInt(u);
+            let wylosowani = "";
+            for (let i = 0; i < u; i++){
+                n1 = parseInt(n1);
+                n2 = parseInt(n2);
+                let ilosc = n2 - n1;
+                let temp = Math.round(Math.random() * ilosc);
+                wylosowani += " " + (temp + n1);
+            }
+            wpisz.innerHTML = `${wylosowani}`;
+        }
     </script>
 </body>
 </html>

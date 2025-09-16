@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slajdy xd</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        #slider img{
+            max-height: 300px;
+            width: auto;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="slider">
+
+    </div>
+
+
+    <script async>
+        let nr = 0;
+        document.addEventListener("DomContentLoaded", function())
+    {
+            slajdshow();
+            setInterval(slajdshow, 3000);
+        };
+        let obrazy = [ "PLP/klub0.png", "PLP/klub1.png", "PLP/klub2.png", "PLP/klub3.png", "PLP/klub4.png", "PLP/klub5.png"];
+        function slajdshow(){
+            document.getElementById('slider').innerHTML = ` <img src="${obrazy[nr]}" alt="slajd">`;
+            nr++;
+            if (nr >= obrazy.length) {
+                nr = 0;
+            }
+        }
+    </script>
+</body>
+</html>
