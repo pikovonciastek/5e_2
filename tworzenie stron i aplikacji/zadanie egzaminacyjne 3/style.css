@@ -1,0 +1,27 @@
+* {
+    font-family: Helvetica;
+}
+
+body {
+    background-color: #EAEAEA;
+}
+
+menu, footer {
+    background-color: #625B5B;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    margin-left: 40%;
+    list-style-type: circle;
+}
+
+menu a {
+ 
+}
