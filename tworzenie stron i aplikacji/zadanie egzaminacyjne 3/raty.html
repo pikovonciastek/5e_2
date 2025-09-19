@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kursy komputerowe</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -18,24 +19,24 @@
 
     <main>
         <h3>Oblicz miesięczną ratę</h3>
-        <input type="checkbox" id="react">
+        <input type="checkbox" id="react" class="kontrolki">
         <label for="react">Kurs React.js</label>
         <br>
-        <input type="checkbox" id="js">
+        <input type="checkbox" id="js" class="kontrolki">
         <label for="js">Kurs JavaScript</label>
         <br>
         <label for="raty">Liczba rat:</label>
-        <input type="number" id="raty">
+        <input type="number" id="raty" class="kontrolki">
         <br>
-        <select id="miasta">
+        <select id="miasta" class="kontrolki">
             <option value="1">Warszawa</option>
             <option value="2">Katowice</option>
             <option value="3">Gdańsk</option>
         </select>
         <br>
-        <button type="submit">Oblicz</button>
+        <button type="submit" class="kontrolki" id="obliczanie">Oblicz</button>
         <br>
-        <p id="skrypt"></p>
+        <p id="wynik"></p>
     </main>
 
     <footer>
@@ -43,3 +44,4 @@
     </footer>
 </body>
 </html>
+
