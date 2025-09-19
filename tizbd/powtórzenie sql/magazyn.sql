@@ -54,7 +54,6 @@ select kontenery.kod, magazyny.lokalizacja from kontenery join magazyny on konte
 select magazyny.kod, count(kontenery.kod) as "liczba kontenerow" from magazyny join kontenery on kontenery.magazyn = magazyny.kod group by kod;
 
 -- 9. Rozwiń poprzednie zapytanie tak, aby w zestawieniu były wymienione również magazyny, w których nie ma kontenerów (powinna być wyświetlona liczba zero, a nie magazyn pominięty w tym zestawieniu)  (zrzut)
-
 -- Wskazówka: wybierz kod magazynu z tabeli magazyny oraz policz kod z tabeli Kontenery; dane wybieraj z dwóch tabel połączonych połączeniem rozszerzającym (LEFT JOIN lub RIGHT JOIN), z rozszerzanej strony powinna być tabela Magazyny (wybieramy wszystkie magazyny, także te, w których nie ma kontenerów); grupowanie według kodu magazynu
 
 select magazyny.kod, count(kontenery.kod) as "liczba kontenerow" 
@@ -91,12 +90,10 @@ set wartosc = wartosc * 0.85;
 
 
 -- 15 Usuń wszystkie kontenery o wartości mniejszej niż $100.  (zrzut)
-
+delete from kontenery where wartosc < 100;
 
 
 -- 16. Usuń wszystkie kontenery z przeładowanych magazynów.   (zrzut)
-
-
-
 -- usuń wszystkie kontenery, których kod jest na liście (IN) kodów przeładowanych magazynów (tę wartość zwraca zapytanie nr. 10)
 
+delete from kontenery where magazyn in (select kod from magazyny where pojemnosc < (select count(*) from kontenery where magazyn = magazyny.kod));
